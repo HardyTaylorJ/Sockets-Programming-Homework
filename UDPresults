@@ -1,0 +1,225 @@
+[H[2J
+=======   server info   =======
+	port: 6666
+	ip address: 172.17.0.4
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+			Correct value test            
+		Room100SE from 0 to 10      
+		Room1408 from 0 to 100  
+		Room80085 from 0 to -10 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 0
+Sensor: Room100SE recorded: 0 time: Oct  3 03:28:05 sensorMin: 0.0 sensorAvg: 0.0 sensorMax: 0.0 allAvg: 0.0
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 0
+Sensor: Room1408 recorded: 0 time: Oct  3 03:28:05 sensorMin: 0.0 sensorAvg: 0.0 sensorMax: 0.0 allAvg: 0.0
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r 0
+Sensor: Room80085 recorded: 0 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 0.0 sensorMax: 0.0 allAvg: 0.0
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 1
+Sensor: Room100SE recorded: 1 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 0.5 sensorMax: 1.0 allAvg: 0.25
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 10
+Sensor: Room1408 recorded: 10 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 5.0 sensorMax: 10.0 allAvg: 2.2
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -1
+Sensor: Room80085 recorded: -1 time: Oct  3 03:28:06 sensorMin: -1.0 sensorAvg: -0.5 sensorMax: 0.0 allAvg: 1.66666666667
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 2
+Sensor: Room100SE recorded: 2 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 1.0 sensorMax: 2.0 allAvg: 1.71428571429
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 20
+Sensor: Room1408 recorded: 20 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 10.0 sensorMax: 20.0 allAvg: 4.0
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -2
+Sensor: Room80085 recorded: -2 time: Oct  3 03:28:06 sensorMin: -2.0 sensorAvg: -1.0 sensorMax: 0.0 allAvg: 3.33333333333
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 3
+Sensor: Room100SE recorded: 3 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 1.5 sensorMax: 3.0 allAvg: 3.3
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 30
+Sensor: Room1408 recorded: 30 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 15.0 sensorMax: 30.0 allAvg: 5.72727272727
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -3
+Sensor: Room80085 recorded: -3 time: Oct  3 03:28:06 sensorMin: -3.0 sensorAvg: -1.5 sensorMax: 0.0 allAvg: 5.0
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 4
+Sensor: Room100SE recorded: 4 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 2.0 sensorMax: 4.0 allAvg: 4.92307692308
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 40
+Sensor: Room1408 recorded: 40 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 20.0 sensorMax: 40.0 allAvg: 7.42857142857
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -4
+Sensor: Room80085 recorded: -4 time: Oct  3 03:28:06 sensorMin: -4.0 sensorAvg: -2.0 sensorMax: 0.0 allAvg: 6.66666666667
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 5
+Sensor: Room100SE recorded: 5 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 2.5 sensorMax: 5.0 allAvg: 6.5625
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 50
+Sensor: Room1408 recorded: 50 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 25.0 sensorMax: 50.0 allAvg: 9.11764705882
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -5
+Sensor: Room80085 recorded: -5 time: Oct  3 03:28:06 sensorMin: -5.0 sensorAvg: -2.5 sensorMax: 0.0 allAvg: 8.33333333333
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 6
+Sensor: Room100SE recorded: 6 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 3.0 sensorMax: 6.0 allAvg: 8.21052631579
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 60
+Sensor: Room1408 recorded: 60 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 30.0 sensorMax: 60.0 allAvg: 10.8
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -6
+Sensor: Room80085 recorded: -6 time: Oct  3 03:28:06 sensorMin: -6.0 sensorAvg: -3.0 sensorMax: 0.0 allAvg: 10.0
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 7
+Sensor: Room100SE recorded: 7 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 3.5 sensorMax: 7.0 allAvg: 9.86363636364
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 70
+Sensor: Room1408 recorded: 70 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 35.0 sensorMax: 70.0 allAvg: 12.4782608696
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -7
+Sensor: Room80085 recorded: -7 time: Oct  3 03:28:06 sensorMin: -7.0 sensorAvg: -3.5 sensorMax: 0.0 allAvg: 11.6666666667
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 8
+Sensor: Room100SE recorded: 8 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 4.0 sensorMax: 8.0 allAvg: 11.52
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 80
+Sensor: Room1408 recorded: 80 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 40.0 sensorMax: 80.0 allAvg: 14.1538461538
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -8
+Sensor: Room80085 recorded: -8 time: Oct  3 03:28:06 sensorMin: -8.0 sensorAvg: -4.0 sensorMax: 0.0 allAvg: 13.3333333333
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 9
+Sensor: Room100SE recorded: 9 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 4.5 sensorMax: 9.0 allAvg: 13.1785714286
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 90
+Sensor: Room1408 recorded: 90 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 45.0 sensorMax: 90.0 allAvg: 15.8275862069
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -9
+Sensor: Room80085 recorded: -9 time: Oct  3 03:28:06 sensorMin: -9.0 sensorAvg: -4.5 sensorMax: 0.0 allAvg: 15.0
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyeheartsockets -r 10
+Sensor: Room100SE recorded: 10 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 5.0 sensorMax: 10.0 allAvg: 14.8387096774
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spooky -r 100
+Sensor: Room1408 recorded: 100 time: Oct  3 03:28:06 sensorMin: 0.0 sensorAvg: 50.0 sensorMax: 100.0 allAvg: 17.5
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r -10
+Sensor: Room80085 recorded: -10 time: Oct  3 03:28:06 sensorMin: -10.0 sensorAvg: -5.0 sensorMax: 0.0 allAvg: 16.6666666667
+
+
+
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+			Incorrect password test 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyesockets -r 80
+failed to authenticate: check username and password and try again
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spoopy -r 72
+failed to authenticate: check username and password and try again
+
+$ sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c giggiohihigukules -r 80085
+failed to authenticate: check username and password and try again
+
+
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+			Incorrect username test 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room10ufeie0SE -c eyeheartsockets -r 80
+failed to authenticate: check username and password and try again
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room108 -c spooky -r 72
+failed to authenticate: check username and password and try again
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room8008135 -c 2lewd -r 80085
+failed to authenticate: check username and password and try again
+
+
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+			Incorrect port test 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyesockets -r 80
+tried to contact server 20 times with no response. Make sure the server is running and the IP address and port number are correct
+Exiting...
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spoopy -r 72
+tried to contact server 20 times with no response. Make sure the server is running and the IP address and port number are correct
+Exiting...
+$ sensor-udp.py -s 172.17.0.4 -p aaaa -u Room80085 -c 2lewd -r 80085
+Incorrect argument: --port argument must be an integer
+
+
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+			Incorrect IP test 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room100SE -c eyesockets -r 80
+tried to contact server 20 times with no response. Make sure the server is running and the IP address and port number are correct
+Exiting...
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room1408 -c spoopy -r 72
+tried to contact server 20 times with no response. Make sure the server is running and the IP address and port number are correct
+Exiting...
+$ sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r 80085
+tried to contact server 20 times with no response. Make sure the server is running and the IP address and port number are correct
+Exiting...
+
+
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+			Missing arguments test 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+$ python sensor-udp.py-p 6666 -u Room100SE -c eyesockets -r 80
+missing --server argument
+all arguments are required, use --help or -h for more info
+
+$ python sensor-udp.py -s 172.17.0.4 -u Room1408 -c spoopy -r 72
+missing --port argument
+all arguments are required, use --help or -h for more info
+
+$ sensor-udp.py -s 172.17.0.4 -p 6666 -c 2lewd -r 80085
+missing --user argument
+all arguments are required, use --help or -h for more info
+
+$ sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -r 80085
+missing --password argument
+all arguments are required, use --help or -h for more info
+
+$ sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd
+missing --value argument
+all arguments are required, use --help or -h for more info
+
+
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+			Incorrectly formated arguments test 
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+
+$ python sensor-udp.py -s 172.17.0.4 -p aaa -u Room80085 -c 2lewd -r 80
+Incorrect argument: --port argument must be an integer
+
+$ python sensor-udp.py -s 172.17.0.4 -p 6666 -u Room80085 -c 2lewd -r aaa
+Incorrect argument: --value argument must be a number
+

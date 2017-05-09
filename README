@@ -1,0 +1,110 @@
+Name: Taylor Hardy
+Email Address: thardy30@gatech.edu
+
+Class name: CS 3251 (Computer Networking I Fall 2016)
+Class section: A
+Date: 10/2/2016
+Assignment title: Sockets Programming Assignment 1
+
+Files:
+sensor-server-tcp.py       Server for TCP
+sensor-server-udp.py       Server for UDP
+sensor-tcp.py              Client for TCP
+sensor-udp.py              Client for UDP
+passwords.csv              a CSV file containing logins for a server
+README                     this file - information about files, usage, and protocol
+TCPtest.sh                 Bash script for testing TCP client
+UDPtest.sh                 Bash script for testing UDP client
+TCPresults                 Results of running TCPtest.sh
+TCPserverresults           Server output from running TCPtest.sh
+UDPresults                 Results of running UDPtest.sh
+UDPserverresults           Server output from running UDPtest.sh
+
+
+
+usage: (the --help or -h provides further help) (all arguments are required unless otherwise specified)
+    run the server (sensor-server-tcp.py or sensor-server-udp.py)
+    before running the corresponding client (sensor-tcp.py or sensor-udp.py
+
+        sensor-tcp.py:
+            python sensor-tcp.py -s [server address] -p [port] -u [username] -c [password] -r [value]
+
+        sensor-server-tcp.py:
+            python sensor-server-tcp.py -f [passwords.csv] -p [port] (optional -v for verbose mode)
+
+        sensor-udp.py
+            python sensor-udp.py -s [server address] -p [port] -u [username] -c [password] -r [value]
+
+        sensor-server-udp.py:
+            python sensor-server-udp.py -f [passwords.csv] -p [port] (optional -v for verbose mode)
+
+
+
+
+
+~~Protocol~~
+note: \n represents a newline present in the protocol. Newline whitespace in documentation is only there for cosmetic puposes
+
+
+Message Format:
+    fields are delimited by a newline.
+    Every message ends with a newline.
+    Message skeleton:
+        [message type]\n
+        [data]\n
+
+
+Message Types:
+    REQC: authentication request (REQuest Challenge)
+        format:
+                REQC\n
+
+    CHAL: CHALlenge value
+        format:
+                CHAL\n
+                [64 character challenge value]\n
+
+    AUTH: AUTHentication information
+        format:
+                AUTH\n
+                [username]\n
+                [md5 hash of password]\n
+
+    ARES: Authentication RESult
+        format:
+                ARES\n
+                [result of authentication (True or False)]\n
+
+    DATA: sensor DATA
+        format:
+                DATA\n
+                [sensor value]\n
+
+    FIND: FINal Data
+        format:
+                FIND\n
+                [username]\n
+                [last recorded value]\n
+                [time]\n
+                [sensor Min]\n
+                [sensor Avg]\n
+                [sensor Max]\n
+                [All Sensor Avg]\n
+
+
+Protocol Order:
+    sensor -> server: REQC
+    server -> sensor: CHAL
+    sensor -> server: AUTH
+    server -> sensor: ARES
+    sensor -> server: DATA
+    server -> sensor: FIND
+
+
+
+
+Known errors/limitations:
+    if a value is sufficiently large (larger than about 256 bytes) it could overflow the receive buffer, causing it to be cut off or bad things to happen
+    Since md5s are stripped of \n when compared, there could possibly be a situation where an incorrect password is accepted, although the likelihood of this happening is extremely low
+    In UDP, connection will time out after 20 failed tries to contact a server in a row
+    In UDP, if client fails to receive FIND it could try to send the DATA again which could result in bad things (or could be harmless, UDP wont drop any packets in my tests with docker)
